@@ -33,21 +33,9 @@ namespace GOTDungeon
             //TODO Create an intro statement 
             Console.WriteLine("Enter the name you'll travel the kingdom with: ");
             string name = Console.ReadLine();
-            Console.WriteLine("Are you a Male or a Female? M/F");
-            ConsoleKey userGender = Console.ReadKey(true).Key;
-            //TODO Create the Gender stat affiliation
-            switch (userGender)
-            {
-                case ConsoleKey.M:
-                    Console.Write("Male\n");
-                    break;
-                case ConsoleKey.F:
-                    Console.Write("Female\n");
-                    break;
-                default:
-                    Console.WriteLine("You must be mistaken, {0} was not an option at hand.", userGender);
-                    break;
-            }
+
+            HouseRace baratheon = HouseRace.Baratheon;
+
 
             Weapon dagger = new Weapon("Steel Dagger", 1, 6, false, 0);
             Weapon sword = new Weapon("Trusty Steel Sword", 2, 8, false, 1);
@@ -60,7 +48,7 @@ namespace GOTDungeon
             switch (playerRace)
             {
                 case ConsoleKey.B:
-                    Player baratheon = new Player(name, 60, 5, 40, 5, 6, 5, 6, 60, HouseRace.Baratheon, sword);
+                    Player userBaratheon = new Player(name, 60, 5, 40, 5, 6, 5, 6, 60, baratheon, sword);
                     Console.WriteLine("You have chosen House Baratheon");
                     break;
                 case ConsoleKey.G:
@@ -104,7 +92,7 @@ namespace GOTDungeon
             //{
             //    Player lannistar = new Player(name, 55, 6, 50, 1, 7, 6, 6, 55, HouseRace.Lannistar, swordT);
             //}
-            Player player = new Player(name, 60, 5, 40, 5, 6, 3, 8, 40, HouseRace.Targaryeon, sword);
+            //Player player = new Player(name, 60, 5, 40, 5, 6, 3, 8, 40, HouseRace.Targaryeon, sword);
 
             //Player[] players = { };
             //TODO Create a "King"
