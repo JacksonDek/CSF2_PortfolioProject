@@ -34,7 +34,12 @@ namespace GOTDungeon
             Console.WriteLine("Enter the name you'll travel the kingdom with: ");
             string name = Console.ReadLine();
 
-            HouseRace baratheon = HouseRace.Baratheon;
+            HouseRace userRace = HouseRace.Baratheon;
+            //HouseRace greyJoy = HouseRace.Greyjoy;
+            //HouseRace lannistar = HouseRace.Lannistar;
+            //HouseRace stark = HouseRace.Stark;
+            //HouseRace targaryeon = HouseRace.Targaryeon;
+            //HouseRace wildling = HouseRace.Wildling;
 
 
             Weapon dagger = new Weapon("Steel Dagger", 1, 6, false, 0);
@@ -48,22 +53,30 @@ namespace GOTDungeon
             switch (playerRace)
             {
                 case ConsoleKey.B:
-                    Player userBaratheon = new Player(name, 60, 5, 40, 5, 6, 5, 6, 60, baratheon, sword);
+                    userRace = HouseRace.Baratheon;
+                    //Player player = new Player(name, 60, 5, 40, 5, 6, 5, 6, 60, baratheon, swordT);
                     Console.WriteLine("You have chosen House Baratheon");
                     break;
                 case ConsoleKey.G:
+                    userRace = HouseRace.Greyjoy;
+                    //player = new Player(name, 60, 5, 30, 5, 6, 5, 6, 60, greyJoy, axe);
                     Console.WriteLine("You have chosen House Greyjoy");
                     break;
                 case ConsoleKey.L:
+                    userRace = HouseRace.Lannistar;
+                    //player = new Player(name, 60, 5, 30, 5, 6, 5, 6, 60, lannistar, sword);
                     Console.WriteLine("You have chosen House Lannistar");
                     break;
                 case ConsoleKey.S:
+                    userRace = HouseRace.Stark;
                     Console.WriteLine("You have chosen House Stark");
                     break;
                 case ConsoleKey.T:
+                    userRace = HouseRace.Targaryeon;
                     Console.WriteLine("You have chosen House Targaryon");
                     break;
                 case ConsoleKey.W:
+                    userRace = HouseRace.Wildling;
                     Console.WriteLine("You have chosen the Wildlings");
                     break;
                 default:
@@ -96,7 +109,6 @@ namespace GOTDungeon
 
             //Player[] players = { };
             //TODO Create a "King"
-            //TODO Create a Weapon
             /*
              * Weapon List:
              
@@ -110,6 +122,7 @@ namespace GOTDungeon
              * - Valyrian Steel Sword
              * - Valerian Steel Dagger
              */
+            Player player = new Player(name, 60, 5, 40, 5, 6, 5, 6, 60, userRace, swordT);            
 
 
             int foesDefeated = 0;
